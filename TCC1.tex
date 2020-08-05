@@ -1,0 +1,423 @@
+%% abtex2-modelo-projeto-pesquisa.tex, v-1.9.7 laurocesar
+%% Copyright 2012-2018 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-projeto-pesquisa.tex
+%% and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% Apresentação 
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	twoside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% ---
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf, abnt-emphasize=bf, bibjustif]{abntex2cite}	% Citações padrão ABNT
+\usepackage[table,xcdraw]{xcolor} % Permite a colorizaão da tabela do cronograma
+\usepackage{lscape} % Permite a impressão de páginas em modo paisagem 
+\usepackage{hyperref}
+\usepackage{float}
+\restylefloat{table}
+
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+\input{dados}
+% ---
+% Configurações de aparência do PDF final
+
+
+\newcommand{\capaufpi}{%
+  \begin{capa}%
+	\center
+	\textbf{\large\imprimirinstituicao}
+	   
+	    \vfill
+	    \textbf
+		    {\large{MONOGRAFIA}}
+	    \vspace{1.5cm}
+		    
+		\textbf{\center\LARGE\imprimirtitulo}
+		     
+	    \vspace{2cm}
+	    \textbf{\large\imprimirautor}
+		
+		
+		\vfill
+		    
+		\textbf{\large\imprimirlocal}
+		
+		\textbf{\large\imprimirdata}
+	    
+	    \vspace*{1cm}
+
+  \end{capa}
+}
+
+
+% folha de rosto 
+
+\makeatletter
+
+\newcommand{\frostoUFPI}{
+\begin{center}
+	%\large\imprimirinstituicao
+    
+%    \vspace*{1cm}
+    
+{\large\imprimirautor}
+
+\vspace*{\fill}\vspace*{\fill}
+
+\begin{center}
+\bfseries\Large\imprimirtitulo
+\end{center}
+
+\vspace*{\fill}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.45\textwidth}
+  \begin{minipage}{.5\textwidth}
+  \SingleSpacing
+  \imprimirpreambulo
+  \par
+  \vspace{1cm}
+  \imprimirorientadorRotulo~\imprimirorientador\par
+  \imprimircoorientadorRotulo~\imprimircoorientador
+  \end{minipage}%
+  \vspace*{\fill}
+}%
+
+
+
+	\vspace*{\fill}
+
+
+	{\large\imprimirlocal}
+
+	\par
+
+	{\large\imprimirdata}
+	\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% ---
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+%\imprimircapa
+\capaufpi
+% ---
+
+% ---
+% Folha de rosto
+% ---
+%\imprimirfolhaderosto
+\frostoUFPI
+% ---
+\begin{folhadeaprovacao}
+\begin{center}
+	{\ABNTEXchapterfont\large\imprimirautor}
+	\vspace*{\fill}\vspace*{\fill}
+	\begin{center}
+		\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+	\end{center}
+	\vspace*{\fill}
+	\hspace{.45\textwidth}
+	\begin{minipage}{.5\textwidth}
+		\imprimirpreambulo
+	\end{minipage}%
+	\vspace*{\fill}
+\end{center}
+Trabalho aprovado. \imprimirlocal, agosto de 2020:
+\assinatura{\textbf{\imprimirorientador} \\ Orientador}
+\assinatura{\textbf{Professor} \\ Convidado 1}
+\assinatura{\textbf{Professor} \\ Convidado 2}
+\assinatura{\textbf{Professor} \\ Convidado 3}
+\assinatura{\textbf{Professor} \\ Convidado 4}
+\begin{center}
+	\vspace*{0.5cm}
+	{\large\imprimirlocal}
+	\par
+	{\large\imprimirdata}
+	\vspace*{1cm}
+\end{center}
+\end{folhadeaprovacao}
+
+% ---
+% NOTA DA ABNT NBR 15287:2011, p. 4:
+%  ``Se exigido pela entidade, apresentar os dados curriculares do autor em
+%     folha ou página distinta após a folha de rosto.''
+% ---
+
+% ---
+% inserir lista de ilustrações
+% ---
+%\pdfbookmark[0]{\listfigurename}{lof}
+%\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% Edite o arquivo siglas.tex na pasta pretextuais
+% ---
+\include{pretextuais/siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\include{pretextuais/simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\include{textuais/resumo}
+\include{textuais/abstract}
+\include{textuais/introdução}
+\include{textuais/justificativa}
+\include{textuais/problematização}
+\include{textuais/hipotese}
+\include{textuais/revisão}
+\include{textuais/metodologia}
+\include{textuais/cronograma}
+
+% ----------------------------------------------------------
+% Capitulo com exemplos de comandos inseridos de arquivo externo 
+% ----------------------------------------------------------
+
+%\include{abntex2-modelo-inclCitaude-comandos}
+
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ---
+\phantompart
+
+% ---
+% Conclusão
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{postextuais/referencias}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+% ↓ Remova o '%' para imprimir o inicio da parte dos apêndices
+%\partapendices
+
+% O que for incluido por aqui até o end serão os aprendices
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+% ↓ Remova o '%' para imprimir o inicio da parte dos anexos
+  %\partanexos
+ 
+%O que for incluido por aqui até o end será considerado anexo
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+
+\phantompart
+
+\printindex
+
+
+\end{document}
