@@ -51,19 +51,13 @@
 % ---
 % Pacotes fundamentais 
 % ---
-\usepackage{helvet}			% Usa a fonte Helvetica
+\usepackage{lmodern}			% Usa a fonte Latin Modern
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
-%\usepackage{microtype} 			% para melhorias de justificação
-\usepackage[nonumberlist=true, 
-					toc,
-					style=index,
-					translate=babel,
-					automake]{glossaries}
-%\makeglossaries
+\usepackage{microtype} 			% para melhorias de justificação
 % ---
 
 % ---
@@ -77,8 +71,9 @@
 \usepackage[table,xcdraw]{xcolor} % Permite a colorizaão da tabela do cronograma
 \usepackage{lscape} % Permite a impressão de páginas em modo paisagem 
 \usepackage{hyperref}
-\usepackage{diagbox}
-\usepackage{verbatim}
+\usepackage{float}
+\restylefloat{table}
+
 
 % --- 
 % CONFIGURAÇÕES DE PACOTES
@@ -100,40 +95,32 @@
 		Citado #1 vezes nas páginas #2.%
 	\fi}%
 % ---
-\input{dados}
-\loadglsentries{postextuais/glossarios} %Carrega as entradas do glossário, se existirem
-\makeglossaries
 
+\input{dados}
 % ---
 % Configurações de aparência do PDF final
-% ---
 
-
-% ---
-% INICIO DAS CUSTOMIZACOES PARA A UNIVERSIDADE FEDERAL DO PIAUÍ
-% ---
 
 \newcommand{\capaufpi}{%
   \begin{capa}%
 	\center
-	\textbf{\normalsize\imprimirinstituicao}
+	\textbf{\large\imprimirinstituicao}
 	   
 	    \vfill
-	    \begin{vplace}[0.2]
 	    \textbf
 		    {\large{MONOGRAFIA}}
-	    \vspace*{1.0cm}
+	    \vspace{1.5cm}		    
 		\textbf{\center\LARGE\imprimirtitulo}
 		     
 	    \vspace{2cm}
 	    \textbf{\large\imprimirautor}
-		\end{vplace}
+		
 		
 		\vfill
 		    
-		\textbf{\normalsize\imprimirlocal}
+		\textbf{\large\imprimirlocal}
 		
-		\textbf{\normalsize\imprimirdata}
+		\textbf{\large\imprimirdata}
 	    
 	    \vspace*{1cm}
 
@@ -191,7 +178,7 @@
 \makeatother
 
 % ---
-% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE FEDERAL DO PIAUÍ
+% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
 % ---
 
 % alterando o aspecto da cor azul
@@ -231,6 +218,7 @@
 % ---
 \makeindex
 % ---
+
 % ----
 % Início do documento
 % ----
@@ -280,7 +268,7 @@
 % inserir lista de tabelas
 % ---
 %\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
+%\listoftables*
 \cleardoublepage
 % ---
 
@@ -294,12 +282,7 @@
 % ---
 % inserir lista de símbolos
 % ---
-%\begin{simbolos}
-%  \item[$ \Gamma $] Letra grega Gama
-%  \item[$ \Lambda $] Lambda
-%  \item[$ \zeta $] Letra grega minúscula zeta
-%  \item[$ \in $] Pertence
-%\end{simbolos}
+\include{pretextuais/simbolos}
 % ---
 
 % ---
@@ -309,6 +292,7 @@
 \tableofcontents*
 \cleardoublepage
 % ---
+
 
 % ----------------------------------------------------------
 % ELEMENTOS TEXTUAIS
@@ -361,11 +345,7 @@
 %
 % Consulte o manual da classe abntex2 para orientações sobre o glossário.
 %
-
-%\printglossaries
-
-\glossary{postextuais/glossarios}
-\printglossaries
+%\glossary
 
 % ----------------------------------------------------------
 % Apêndices
