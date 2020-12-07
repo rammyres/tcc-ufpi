@@ -52,6 +52,7 @@
 % Pacotes fundamentais 
 % ---
 \usepackage{helvet}			% Usa a fonte Helvetica
+\renewcommand{\familydefault}{\sfdefault} 
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
@@ -114,30 +115,31 @@
 % ---
 
 \newcommand{\capaufpi}{%
-  \begin{capa}%
-	\center
-	\textbf{\normalsize\imprimirinstituicao}
-	   
-	    \vfill
-	    \begin{vplace}[0.2]
-	    \textbf
-		    {\large{MONOGRAFIA}}
-	    \vspace*{1.0cm}
-		\textbf{\center\LARGE\imprimirtitulo}
-		     
-	    \vspace{2cm}
-	    \textbf{\large\imprimirautor}
+	\begin{capa}%
+		\center
+		\textbf{\normalsize\imprimirinstituicao}
+		
+		\vfill
+		\begin{vplace}[0.2]
+			\textbf
+			{\large{MONOGRAFIA}}
+			%	    \vspace*{1.0cm}
+			\vfill
+			\textbf{\center\LARGE\imprimirtitulo}
+			\vfill		     
+			%	    \vspace{2cm}
+			\textbf{\large\imprimirautor}
 		\end{vplace}
 		
 		\vfill
-		    
+		
 		\textbf{\normalsize\imprimirlocal}
 		
 		\textbf{\normalsize\imprimirdata}
-	    
-	    \vspace*{1cm}
-
-  \end{capa}
+		
+		\vspace*{1cm}
+		
+	\end{capa}
 }
 
 
@@ -320,12 +322,12 @@
 % ----------------------------------------------------------
 \include{textuais/resumo}
 \include{textuais/abstract}
-\include{textuais/introdução}
+\include{textuais/introducao}
 \include{textuais/justificativa}
-\include{textuais/problematização}
+\include{textuais/problematizacao}
 \include{textuais/hipotese}
 \include{textuais/objetivos}
-\include{textuais/revisão}
+\include{textuais/revisao}
 \include{textuais/metodologia}
 \include{textuais/cronograma}
 
