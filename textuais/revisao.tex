@@ -4,9 +4,7 @@
 %---------------------
 Para editar a revisão bibliográfica edite o arquivo revisão.tex na pasta textuais. 
 \par
-Para criar a lista de referência recomendo criar um arquivo bibtex no Mendeley, Jabref, bibtex.online, ou outro gerenciador de referências, ou ainda criar as referências a partir dos geradores de sites como Google Scholar, Periodicos Capes, etc. 
-\par
-Para chamar uma citação você deve usar o \verb+\cite{id da referência}. ou \citeonlin{id da referência}+
+Para criar a lista de referência recomendo criar um arquivo bibtex )referencias.bib) no Mendeley, Jabref, bibtex.online, ou outro gerenciador de referências, ou ainda criar as referências a partir dos geradores de sites como Google Scholar, Periodicos Capes, etc. 
 \par
 Para citar no estilo (AUTOR, 2000) use \verb+\cite{id da referência}+
 \par
@@ -16,8 +14,6 @@ Para citar no estilo Autor (2000) use \verb+\citeonlin{id da referência}+
 \par
 Por exemplo: \citeonline{Ufpi2020}
 \par
-As citações criam as referências automaticamente no fim do texto, somente aquelas existentes no arquivo referencia.bib aparecerão na seção correspondente.
+As ids de referências são as existentes no começo de cada entrada do arquivo bibtex. As citações criam as referências automaticamente no fim do texto, somente aquelas existentes no arquivo referencia.bib e efetivamente usadas aparecerão na seção correspondente.
 
 Para criar apêndices e anexos, edite a parte correspondente no arquivo TCC1.tex, removendo os comentários \verb+%+ nos comandos \verb+\partapendices+ e \verb+\partanexos+ da seção postextuais, e incluindo os arquivos pertinentes na pasta postextuais.
-
-Por exemplo, para um anexo inclua: \verb+\include{postextuais/anexo.tex}+ par incluir um anexo. 
