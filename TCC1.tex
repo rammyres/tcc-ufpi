@@ -58,6 +58,9 @@
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
+% caminho para a pasta de imagens
+\graphicspath{ {imagens/} }
+\usepackage{fancyvrb}
 %\usepackage{microtype} 			% para melhorias de justificação
 \usepackage[nonumberlist=true, 
 					toc,
@@ -273,8 +276,8 @@
 % ---
 % inserir lista de ilustrações
 % ---
-%\pdfbookmark[0]{\listfigurename}{lof}
-%\listoffigures*
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
 \cleardoublepage
 % ---
 
@@ -318,7 +321,7 @@
 \textual
 % ----------------------------------------------------------
 % Os includes a seguir incluirão os arquivos contidos na pasta 
-% textuais. 
+% textuais e poderão ou não ser omitidos.  
 % ----------------------------------------------------------
 \include{textuais/resumo}
 \include{textuais/abstract}
@@ -328,8 +331,13 @@
 \include{textuais/hipotese}
 \include{textuais/objetivos}
 \include{textuais/revisao}
-\include{textuais/metodologia}
-\include{textuais/cronograma}
+\include{textuais/metodologia} % O conteúdo deste arquivo pode ser incluído na proposta de trabalho
+\include{textuais/cronograma} % Este arquivo é exclusivo do TCC 2, para retira-lo coloque um % no começo da linha
+\include{textuais/proposta} % Este arquivo é exclusivo do TCC 2, para retira-lo coloque um % no começo da linha
+\include{textuais/resultados} % Este arquivo é exclusivo do TCC 2, para retira-lo coloque um % no começo da linha
+\include{textuais/discussao} % Este arquivo é exclusivo do TCC 2, para retira-lo coloque um % no começo da linha
+\include{textuais/conclusao} % Este arquivo é exclusivo do TCC 2, para retira-lo coloque um % no começo da linha
+
 
 % ----------------------------------------------------------
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
@@ -378,6 +386,8 @@
 % Inicia os apêndices
 % ---
 \begin{apendicesenv}
+	
+\include{postextuais/apendicea}
 
 % Imprime uma página indicando o início dos apêndices
 % ↓ Remova o '%' para imprimir o inicio da parte dos apêndices
@@ -397,6 +407,8 @@
 % Inicia os anexos
 % ---
 \begin{anexosenv}
+
+\include{postextuais/anexo1}
 
 % Imprime uma página indicando o início dos anexos
 % ↓ Remova o '%' para imprimir o inicio da parte dos anexos

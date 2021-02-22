@@ -3,3 +3,56 @@
 % Edite a partir daqui 
 %---------------------
 Para editar a problematização, edite o arquivo problematização.tex na pasta textuais. 
+
+\section{Seção}
+Para criar uma seção use o comando:
+	\begin{verbatim}
+		\section{Nome da seção}
+	\end{verbatim}
+
+\section{Figuras}
+
+Para incluir figuras utilize:
+
+\begin{verbatim}
+	\begin{figure}[!htb]
+		\centering 
+		\includegraphics[width=0.5\textwidth]{imagens/ufpi}
+		\caption{Brasao da UFPI}
+		\label{fig:BrasaoUFPI}
+	\end{figure}
+\end{verbatim}
+
+
+\begin{figure}[!htb]
+	\centering 
+	\includegraphics[width=0.5\textwidth]{imagens/ufpi}
+	\caption{Brasão da UFPI}
+	\label{fig:BrasaoUFPI}
+\end{figure}
+\clearpage
+
+O nome do arquivo imagem não deve conter a extensão do arquivo, o \LaTeX \ processará automaticamente se o arquivo for suportado. 
+
+O comando \verb+\textwidth+ retorna a largura da página e ao utilizar ele a imagem ocupara toda extensão dela. Para reduzir a largura utilize um multiplicador fracionário ou um valor absoluto em centímetros (cm) ou milímetros (mm), como o exemplo a seguir:
+
+\begin{figure}[!htb]
+	\centering 
+	\includegraphics[width=8cm]{imagens/latex}
+	\caption{Logo \LaTeX}
+	\label{fig:Latex}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering 
+	\includegraphics[width=100mm]{imagens/latex}
+	\caption{Logo \LaTeX}
+	\label{fig:Latex2}
+\end{figure}
+
+O comando \verb+\caption{}+ inclui a legenda a foto e o \verb|\label{fig:nome_da_figura| inclui uma  referência para a imagem na tabela de ilustrações. 
+
+Atente a posição das figuras, se o resultado da página ficar desorganizado, utilize \verb|\clearpage| para evitar que a imagem se distancie demais do texto a que se refere. 
+
+\subsection{Subseção}
+Subseções são marcadas com \verb|\subsection{Nome da subseção}|. 
