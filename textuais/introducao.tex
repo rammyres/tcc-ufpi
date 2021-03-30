@@ -89,13 +89,13 @@ Remova o \verb|%| do começo da linha.
 
 \section{Problemas conhecidos}
 
-\subsection{Glossarios com TeXstudio}
+\subsection{Glossários com TeXstudio}
 Há um problema conhecido com o \href{https://www.texstudio.org/}{TeXstudio}, que pula a geração de glossários em decorrência de um alerta do pdflatex, para corrigir o problema, execute os seguintes passos:
 
 \begin{enumerate}
 	\item Acesse a pasta \textbf{tcc-ufpi} usando o console.
-	\item Execute o comando \verb|pdflatex TCC.tex|
 	\item Execute o comando \verb|makeglossaries TCC|
+	\item Verifique se houve a geração do arquivo TCC.gls e TCC.gls
 	\item Volte ao TeXstudio e faça a compilação normalmente 
 \end{enumerate}
 
