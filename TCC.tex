@@ -83,6 +83,11 @@
 \usepackage{hyperref}
 \usepackage{diagbox}
 \usepackage{verbatim}
+\usepackage{pdfpages} % Permite a inserção de arquivos pdf no documento final
+\usepackage{url}
+\usepackage{glossaries}
+\def\UrlBreaks{\do\/\do-}
+
 
 % --- 
 % CONFIGURAÇÕES DE PACOTES
@@ -266,7 +271,34 @@
 %\imprimirfolhaderosto
 \frostoUFPI
 % ---
-\include{pretextuais/folha_de_aprovacao}
+
+% ---
+% Após a aprovação pela banca o documento deve ser catalografado pela Biblioteca da UFPI. Após a solicitação
+% do serviço ela deve ser inserida imediatamente após a ata de aprovação. Para preparar para a versão final 
+% você deverá incluir o arquivo na página pretextuais e mudar seu nome para ficha_catalografica.pdf e 
+% descomentar a linha a seguir
+% ---
+% \includepdf[pages=-]{pretextuais/ficha_catalografica.pdf}
+
+% ---
+% A folha de aprovação deve ser inclusa a versão entregue antes da defesa, após a defesa ela
+% será substituida pela ata de aprovação, assinada pela banca.
+% ---
+\include{pretextuais/folha_de_aprovacao} % Coloque um % no começo dessa linha para emitir a folha de aprovação
+
+% ---
+% A ata de aprovação será entregue pela banca após a defesa. Ela deve constar na versão final do documento
+% impresso. Você pode inserir ela no documento copiando o arquivo para a pasta pretextuais e mudando seue nome
+% para ata.pdf e descompentando a linha abaixo
+% ---
+% \includepdf[pages=-]{pretextuais/ata.pdf}
+
+
+
+
+
+
+
 % ---
 % NOTA DA ABNT NBR 15287:2011, p. 4:
 %  ``Se exigido pela entidade, apresentar os dados curriculares do autor em

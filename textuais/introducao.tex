@@ -64,3 +64,41 @@ A estrutura de arquivos que podem ou não ser incluídos está na sessão textua
 \end{figure}
 
 Os dados da banca devem ser alterados no arquivo \verb|pretextuais/|\par\verb|folha_de_aprovacao.tex|.
+
+\section{Ata e ficha catalográfica}
+
+Após a aprovação do TCC pela banca alguns procedimentos devem ser tomados. 
+
+\subsection{Ata}
+Após a aprovação você receberá uma ata de aprovação. Para preparar o documento para catalogação e impressão você deve procurar no arquivo TCC.tex a linha a seguir: 
+\par\verb|\include{pretextuais/folha_de_aprovacao}| \par
+
+Você então deve incluir um \verb|%| no começo dela, comentando a linha inteira.
+
+Você deve então copiar o arquivo da ata e colar na pasta pretextuais, alterar seu nome para ata.pdf e retirar o \verb|%| do começo da linha a seguir:  
+\par\verb|% \includepdf[pages=-]{pretextuais/ata.pdf}| \par
+Ao descomentar a linha você permite que a ata seja inclusa no documento final. 
+
+\subsection{Ficha catalográfica}
+
+Após a inclusão da ata o documento deve ser submetido a Biblioteca da UFPI para catalogação. O serviço atualmente é feito através do \href{http://sigaa.ufpi.br}{SIGAA}, menu Biblioteca -> Serviços ao usuário -> Solicitar Ficha Catalográfica, enviando a versão com a ata de aprovação. 
+
+Ao receber a ficha catalográfica ela deve ser inserida após a folha de rosto. Para isso você deve procurar a linha a seguir: 
+\par\verb|% \includepdf[pages=-]{pretextuais/ficha_catalografica.pdf}| \par
+Remova o \verb|%| do começo da linha. 
+
+\section{Problemas conhecidos}
+
+\subsection{Glossarios com TeXstudio}
+Há um problema conhecido com o \href{https://www.texstudio.org/}{TeXstudio}, que pula a geração de glossários em decorrência de um alerta do pdflatex, para corrigir o problema, execute os seguintes passos:
+
+\begin{enumerate}
+	\item Acesse a pasta \textbf{tcc-ufpi} usando o console.
+	\item Execute o comando \verb|pdflatex TCC.tex|
+	\item Execute o comando \verb|makeglossaries TCC|
+	\item Volte ao TeXstudio e faça a compilação normalmente 
+\end{enumerate}
+
+Esse procedimento precisa ser repetido se houver alteração do arquivo glossarios.tex.
+
+
